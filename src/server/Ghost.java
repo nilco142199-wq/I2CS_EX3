@@ -80,7 +80,7 @@ public class Ghost implements IGhost {
             StdDraw.setPenColor(StdDraw.CYAN);
             StdDraw.filledCircle(_pos.getX() + 0.5, _pos.getY() + 0.5, 0.4);
         } else {
-            String img = "src/images/g" + _id + ".png";
+            String img = "C:\\Users\\Neal\\IdeaProjects\\Ex3_lcs\\src\\images\\g" + _id + ".png";
             StdDraw.picture(_pos.getX() + 0.5, _pos.getY() + 0.5, img, 1, 1);
         }
     }

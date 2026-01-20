@@ -71,7 +71,7 @@ public class Ex3Algo implements PacManAlgo{
     private int chooseDir(int[][] board, int w, int h, int px, int py, int wall, int food,
                           GhostCL[] ghosts, int code, boolean cyclic) {
 
-        int[] dirs = {Game.UP, Game.LEFT, Game.DOWN, Game.RIGHT};
+        int[]   dirs = {Game.UP, Game.LEFT, Game.DOWN, Game.RIGHT};
 
         int bestDir = PacmanGame.ERR;
         double bestScore = -1e18;
@@ -94,13 +94,14 @@ public class Ex3Algo implements PacManAlgo{
             if (foodDist >= 0) score += 5000.0 / (1.0 + foodDist);
             else score -= 2000.0;
 
+
             score -= 30.0 * _visit[nx][ny];
 
             if (_sameDirStreak >= 10 && d == _lastDir) score -= 500.0;
 
             if (ghostDist >= 0) {
                 if (ghostDist <= 2) score -= 200000.0;
-                else if (ghostDist == 3) score -= 50000.0;
+                else if (ghostDist == 3) score -= 100000.0;
                 else if (ghostDist == 4) score -= 15000.0;
                 else score -= 2000.0 / (1.0 + ghostDist);
             }
